@@ -1,0 +1,54 @@
+@import 'variable';
+
+#slider{
+    position:relative;
+    max-width:800px;
+    top:0;
+    left:0;
+    width:98%;
+    height:400px;
+    background-color:white;
+    border:20px solid $border-color;
+    margin:3rem auto 0rem auto;
+    box-shadow:6px 6px 10px rgba(200,200,200,0.4),-6px -6px 10px rgba(80,70,50,0.5);
+    border-radius:4px;
+    &:hover{
+        border-color:$border-dark;
+    }
+    @media (max-width:420px){
+        height:300px;
+    }
+    .image{
+        position:absolute;
+        left:0;
+        top:0;
+        width:100%;
+        height:100%;
+        transition: transform $timer;
+        &:hover{
+            opacity:0.95;
+        }
+    }
+    .right_slide{
+        position:absolute;
+        top:46%;
+        right:10px;
+        color:grey;
+        transition:transform $timer;
+        display:none;
+        &:active{
+            transform: translateX(8px);
+        }
+    }
+    .left_slide{
+        position:absolute;
+        top:46%;
+        left:10px;
+        color:grey;
+        transition:transform $timer;
+        display:none;
+        &:active{
+            transform: translateX(-8px);
+        }
+    }
+}
